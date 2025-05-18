@@ -1,0 +1,439 @@
+/* Custom Navbar Styles */
+.navbar {
+  background-color: #f8fafc; /* Light gray */
+  border-bottom: 1px solid #e2e8f0; /* Soft border */
+  padding: 0.8rem 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 5rem;
+}
+
+.navbar-brand {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #0f172a; /* Dark navy */
+}
+
+.navbar-brand:hover {
+  color: #2563eb; /* Blue on hover */
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #334155; /* Slate */
+  margin-left: 1rem;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #2563eb; /* Hover blue */
+}
+
+/* Toggler icon */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23334155' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(51, 65, 85, 0.5)' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Collapse background for small screens */
+@media (max-width: 768px) {
+  .navbar-collapse {
+    background-color: #f8fafc;
+    padding: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    margin: 0.5rem 0;
+  }
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #f8fafc; /* Light background */
+  border-top: 1px solid #e2e8f0;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #334155; /* Slate */
+  height: 5rem;
+}
+
+.f-info {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.f-info-socials i {
+  font-size: 1.4rem;
+  margin: 0 0.6rem;
+  color: #64748b; /* Muted icon color */
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.f-info-socials i:hover {
+  color: #2563eb; /* Blue on hover */
+}
+
+.f-info-brand {
+  font-weight: 500;
+}
+
+.f-info-links a {
+  margin: 0 0.5rem;
+  color: #334155;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.f-info-links a:hover {
+  color: #2563eb;
+}
+
+/* Responsive layout */
+@media (min-width: 600px) {
+  .f-info {
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: auto;
+  }
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+
+.listing-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.listing-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.listing-card:hover {
+  transform: scale(1.02);
+}
+
+.card-img-top {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+  background-color: #f8fafc;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #334155;
+}
+
+.card-text b {
+  font-size: 1.1rem;
+  color: #1e293b;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+/* Container layout */
+.row {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+/* Form styling */
+form {
+  background-color: #f8fafc;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Input fields */
+.form-control {
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.2);
+}
+
+.form-label {
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Valid and Invalid feedback */
+.valid-feedback,
+.invalid-feedback {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.invalid-feedback {
+  color: #e11d48;
+}
+
+/* Button styling */
+.add-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+  background-color: #0f172a;
+}
+/* Section spacing */
+.row.mt-3 {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Form heading */
+h3 {
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1e3a8a;
+}
+
+/* Form container */
+form {
+  background-color: #f1f5f9;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Inputs and textarea */
+.form-control {
+  border-radius: 8px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 0.15rem rgba(37, 99, 235, 0.2);
+}
+
+/* Label style */
+.form-label {
+  font-weight: 500;
+  color: #334155;
+}
+
+/* Valid and Invalid feedback */
+.valid-feedback,
+.invalid-feedback {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.invalid-feedback {
+  color: #dc2626;
+}
+
+.valid-feedback {
+  color: #16a34a;
+}
+
+/* Button style */
+.edit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  background-color: #0f172a;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #1e293b;
+}
+
+/* Card container */
+.show-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 30rem; /* Fixed height for the card */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover effect */
+.show-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Card image */
+.show-img {
+  width: 100%;
+  height: 10rem; /* Fixed height for image */
+  object-fit: cover;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Card body */
+.card-body {
+  padding: 1.5rem;
+  flex: 1; /* Ensures body stretches to fill remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes space evenly */
+  overflow: hidden; /* Prevents overflow of content */
+}
+
+/* Text styles */
+.card-text {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
+}
+
+/* Owner section text */
+.card-text b {
+  font-weight: 600;
+}
+
+/* Price styling */
+.card-text span.price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-left: 5px;
+}
+
+/* Location and Country */
+.card-text:last-of-type {
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+/* Centering the card */
+.show-card {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .show-card {
+    width: 90%;
+    height: auto; /* Allow height to adjust for smaller screens */
+  }
+  .show-img {
+    height: 12rem; /* Adjust image height for smaller screens */
+  }
+}
+/* Container for buttons */
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Base button styling */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none; /* Remove underline from <a> tag */
+  display: inline-block;
+  text-align: center;
+}
+
+/* Edit button styling */
+.btns a {
+  background-color: #3498db; /* Blue for Edit */
+  color: white;
+}
+
+/* Hover effect for Edit button */
+.btns a:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Delete button specific styling */
+.btn.danger {
+  background-color: #e74c3c; /* Red background for Delete */
+  color: white;
+  border: none;
+  width: 100%; /* Make the button full width */
+}
+
+/* Hover effect for Delete button */
+.btn.danger:hover {
+  background-color: #c0392b; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .btns {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btns a, .btn.danger {
+    width: 100%; /* Full width on smaller screens */
+    margin-bottom: 1rem;
+  }
+}
