@@ -6,7 +6,8 @@ const path = require("path");
 const methodOverride = require("method-override"); // for supporting PUT and DELETE from forms
 const ejsMate = require("ejs-mate"); // EJS layout engine for templates
 const ExpressError = require("./utils/ExpressError"); // custom error class
-
+const session = require("express-session");
+const flash = require("connect-flash");
 
 const listingRouter = require("./routes/listing.js");
 const reviewRouter = require("./routes/review.js");
@@ -32,17 +33,26 @@ app.use(express.urlencoded({ extended: true })); // parse form data in req.body
 app.use(methodOverride("_method")); // allow PUT and DELETE methods via query string (_method)
 app.use(express.static(path.join(__dirname, "public"))); // serve static files from public/
 
-// Validation middleware for listings
-const validateListing = (req, res, next) => {
-  let { error } = listingSchema.validate(req.body); // validate incoming data
-  if (error) {
-    let errMsg = error.details.map(el => el.message).join(", "); // format error message
-    throw new ExpressError(400, errMsg); // throw custom error
-  } else {
-    next(); // proceed if valid
+const sessionOption = {
+  secret: "mysupersecretcode",
+  resave: false,
+  saveUninitialized: true,
+  cookie: {
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge: 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true,
   }
 };
 
+app.use(session(sessionOption));
+app.use(flash());
+
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  // res.locals.currUser = req.user;
+  next();
+});
 
 
 // ROUTES
