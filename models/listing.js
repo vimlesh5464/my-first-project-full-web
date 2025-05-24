@@ -22,10 +22,10 @@ const listingSchema = new Schema({
       ref: "Review"
     }
   ],
-  // owner: {
-  //   type: mongoose.Schema.Types.ObjectId,
-  //   ref: 'User'
-  // },  // country is optional
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  },  // country is optional
 });
 
 listingSchema.post("findOneAndDelete", async (listing) => {
