@@ -5,7 +5,7 @@
   </div>
 
   <div class="card col-6 offset-3 show-card listing-card">
-    <img src="<%= listing.image %>" class="card-img-top show-img" alt="listing_image">
+    <img src="<%= listing.image.url %>" class="card-img-top show-img" alt="listing_image">
     <div class="card-body">
       <p class="card-text">
         owner by: <%= listing.owner ? listing.owner.username : "Unknown Owner" %>
@@ -68,7 +68,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= review.author.username %></h5>
           <p class="starability-result card-text" data-rating="<%= review.rating %>">
-            <%= review.rating %> stars</p>
+          </p>
           <p class="card-text"><%= review.comment %></p>
         </div>
         <form method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
